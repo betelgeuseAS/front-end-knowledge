@@ -3,8 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "./",
+  "repository": "https://github.com/betelgeuseAS/retrospective",
   "main": "electron/main.js",
   "productName": "Retrospective App",
+  "description": "Retrospective App",
+  "author": {
+    "name": "Andrew Samchuk",
+    "email": "betelgeuse.as@gmail.com"
+  },
+  "license": "MIT",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.6",
@@ -61,7 +68,7 @@
     "publish": {
       "provider": "github",
       "repo": "retrospective",
-      "owner": "andrew"
+      "owner": "Andrew"
     }
   }
 }

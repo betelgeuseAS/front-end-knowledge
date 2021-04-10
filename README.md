@@ -1,3 +1,15 @@
+# Retrospective
+
+### Build
+1) Delete files `build` and `dist`
+2) `npm run build`
+3) `npm run build-electron`
+4) `npm run package`
+
+### Start
+1) `npm start`
+2) `npm run electron-dev`
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

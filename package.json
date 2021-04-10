@@ -3,20 +3,33 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "./",
-  "repository": "https://github.com/betelgeuseAS/retrospective",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/betelgeuseAS/retrospective.git"
+  },
   "main": "electron/main.js",
   "productName": "Retrospective App",
   "description": "Retrospective App",
   "author": {
-    "name": "Andrew Samchuk",
-    "email": "betelgeuse.as@gmail.com"
+    "name": "Andrew",
+    "email": "betelgeuse.as@gmail.com",
+    "url": "https://github.com/betelgeuseAS"
   },
+  "keywords": [
+    "electron",
+    "react",
+    "redux",
+    "nedb",
+    "sass"
+  ],
   "license": "MIT",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
+    "ajv": "^6.12.6",
     "electron-is-dev": "^2.0.0",
+    "nedb-promises": "^4.1.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
@@ -52,7 +65,8 @@
   },
   "devDependencies": {
     "electron": "^12.0.2",
-    "electron-builder": "^22.10.5"
+    "electron-builder": "^22.10.5",
+    "lodash": "^4.17.21"
   },
   "build": {
     "win": {
@@ -70,5 +84,10 @@
       "repo": "retrospective",
       "owner": "Andrew"
     }
+  },
+  "devEngines": {
+    "node": ">=14.x",
+    "npm": ">=7.x",
+    "yarn": ">=1.0.1"
   }
 }

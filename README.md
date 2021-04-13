@@ -10,6 +10,14 @@
 1) `npm start`
 2) `npm run electron-dev`
 
+### Errors
+1) Error during node-sass installation. Resolve: `npm install node-sass@latest --save-dev`
+
+### Dependencies
+* `node-sass` - a library that provides binding for Node.js to LibSass, the C version of the popular stylesheet preprocessor, Sass.
+* `@material-ui/core` - фреймворк для пользовательского интерфейса React.
+* `nedb-promises` - a dead-simple promise wrapper for NeDB. NeDB - Embedded persistent or in memory database for Node.js, nw.js, Electron and browsers, 100% JavaScript, no binary dependency.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

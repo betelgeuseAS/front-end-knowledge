@@ -12,6 +12,7 @@
 
 ### Errors
 1) Error during node-sass installation. Resolve: `npm install node-sass@latest --save-dev`
+2) Error during react-localization installation. Resolve: `npm i react-localization --legacy-peer-deps`
 
 ### Dependencies
 * `node-sass` - a library that provides binding for Node.js to LibSass, the C version of the popular stylesheet preprocessor, Sass.

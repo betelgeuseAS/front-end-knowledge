@@ -13,7 +13,8 @@ class App extends Component {
       language: ''
     };
 
-    localization.setLanguage('en');
+    // localization.setLanguage('en');
+    this.setLanguage('en');
   }
 
   setLanguage = (language) => {

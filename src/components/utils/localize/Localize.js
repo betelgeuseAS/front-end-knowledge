@@ -5,7 +5,6 @@ import localization from './localization';
 import './Localize.sass';
 
 export const Localize = ({onSetLanguage}) => {
-
   return (
     <div className="localize">
       <span className={classNames('flag', { selected: localization.getLanguage() === 'uk' })} onClick={() => onSetLanguage('uk')}>

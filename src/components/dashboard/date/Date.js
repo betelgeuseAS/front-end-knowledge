@@ -1,13 +1,13 @@
 import React from 'react';
 import './Date.sass';
 import Typography from "@material-ui/core/Typography";
-import Title from '../../Title';
+import MainTitle from '../../typography/main-title/MainTitle';
 import moment from "moment";
 
 export default function Date() {
   return (
     <>
-      <Title>Date</Title>
+      <MainTitle>Date</MainTitle>
 
       <Typography align="center" component="div">
         <Typography variant="subtitle2" component="div">{moment().format("dddd")}</Typography>

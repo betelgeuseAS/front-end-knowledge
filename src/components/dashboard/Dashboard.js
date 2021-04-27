@@ -3,7 +3,6 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Chart from "../Chart";
-import Orders from "../Orders";
 import Date from "./date/Date";
 import clsx from "clsx";
 import {Localize} from "../utils/localize/Localize";
@@ -21,7 +20,8 @@ export default function Dashboard({classes}) {
         <Grid container spacing={3}>
           <Grid item xs={12} md={8} lg={9}>
             <Paper className={fixedHeightPaper}>
-              <Chart />
+              {/*<Chart />*/}
+              Statistic
             </Paper>
           </Grid>
 
@@ -33,7 +33,7 @@ export default function Dashboard({classes}) {
 
           <Grid item xs={12}>
             <Paper className={classes.paper}>
-              <Orders />
+              Main
             </Paper>
           </Grid>
         </Grid>

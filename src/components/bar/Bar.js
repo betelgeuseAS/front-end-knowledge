@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Bar.sass';
 import clsx from "clsx";
 import PropTypes from "prop-types";
@@ -11,8 +11,12 @@ import Typography from "@material-ui/core/Typography";
 import Switch from "@material-ui/core/Switch/Switch";
 import Badge from "@material-ui/core/Badge";
 import AppBar from "@material-ui/core/AppBar/AppBar";
+import localization from "../utils/localize/localization";
+import Context from '../utils/context/Context';
 
-export default function Bar({onMenuHandler, onThemeChangeHandler, menuOpen, darkState,  classes}) {
+export default function Bar({onMenuHandler, onThemeChangeHandler, onSetLanguage, menuOpen, darkState}) {
+  const classes = useContext(Context)['classes'];
+
   return (
     <AppBar
       position="absolute"
@@ -40,7 +44,10 @@ export default function Bar({onMenuHandler, onThemeChangeHandler, menuOpen, dark
           className={classes.title}
         >
           Retrospective
+          <strong>{localization.language}</strong>
         </Typography>
+
+        <Localize onSetLanguage={(language) => onSetLanguage(language)} />
 
         <Switch checked={darkState} onChange={onThemeChangeHandler} />
 
@@ -57,15 +64,15 @@ export default function Bar({onMenuHandler, onThemeChangeHandler, menuOpen, dark
 Localize.propTypes = {
   onHandleMenu: PropTypes.func.isRequired,
   onThemeChangeHandler: PropTypes.func.isRequired,
+  onSetLanguage: PropTypes.func.isRequired,
   darkState: PropTypes.bool,
-  openMenu: PropTypes.bool,
-  classes: PropTypes.object
+  openMenu: PropTypes.bool
 };
 
 Localize.defaultProps = {
   onHandleMenu: () => {},
   onThemeChangeHandler: () => {},
+  onSetLanguage: () => {},
   darkState: false,
-  openMenu: true,
-  classes: {}
+  openMenu: true
 };

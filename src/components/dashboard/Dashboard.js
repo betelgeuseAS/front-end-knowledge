@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
@@ -8,8 +8,10 @@ import clsx from "clsx";
 import {Localize} from "../utils/localize/Localize";
 import PropTypes from "prop-types";
 import {Box} from "@material-ui/core";
+import Context from "../utils/context/Context";
 
-export default function Dashboard({classes}) {
+export default function Dashboard() {
+  const classes = useContext(Context)['classes'];
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   return (
@@ -42,10 +44,6 @@ export default function Dashboard({classes}) {
   );
 }
 
-Localize.propTypes = {
-  classes: PropTypes.object
-};
+Localize.propTypes = {};
 
-Localize.defaultProps = {
-  classes: {}
-};
+Localize.defaultProps = {};

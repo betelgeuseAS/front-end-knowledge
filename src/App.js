@@ -1,58 +1,50 @@
-import React, {Component, useState} from "react";
+import React, {Component} from "react";
 import Dashboard from "./components/dashboard/Dashboard";
-import { Localize } from "./components/utils/localize/Localize";
 import localization from "./components/utils/localize/localization";
 import './App.sass';
 import Box from '@material-ui/core/Box';
 import moment from "moment";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import {
-  orange,
-  lightBlue,
-  deepPurple,
-  deepOrange
-} from "@material-ui/core/colors";
+import {orange, lightBlue, deepPurple, deepOrange} from "@material-ui/core/colors";
 import Menu from './components/menu/Menu';
 import Bar from './components/bar/Bar';
 
 // For Switch Theming
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+
 import { useStyles } from './components/utils/theme/stales';
-import { ContextProvider } from './components/utils/context/Context'
+import { ContextProvider } from './components/utils/context/Context';
+import { withStyles } from '@material-ui/core/styles';
 
-export default function App() {
-  const [menuOpen, setMenuOpen] = useState(true);
-  const [darkState, setDarkState] = useState(false);
-  const [language, setLanguage] = useState('');
-  const palletType = darkState ? "dark" : "light";
-  const mainPrimaryColor = darkState ? orange[500] : lightBlue[500];
-  const mainSecondaryColor = darkState ? deepOrange[900] : deepPurple[500];
-  const darkTheme = createMuiTheme({
-    palette: {
-      type: palletType,
-      primary: {
-        main: mainPrimaryColor
-      },
-      secondary: {
-        main: mainSecondaryColor
-      }
-    }
-  });
-  const classes = useStyles();
-  const handleThemeChange = () => {
-    setDarkState(!darkState);
+class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      menuOpen: true,
+      darkState: false,
+      language: ''
+    };
+
+    // let language = localStorage.getItem('language');
+    // if (language) {
+      localization.setLanguage('en');
+    // }
+  }
+
+  hemeChangeHandler = () => {
+    this.setState(({ darkState }) => ({ darkState: !darkState }));
   };
 
-  const menuHandler = (mode) => {
-    setMenuOpen(mode);
+  menuHandler = (mode) => {
+    this.setState({menuOpen: mode});
   };
 
-  const setLanguageHandler = (event) => {
-    console.log('test');
+  setLanguageHandler = (event) => {
     let language = event.target.value;
 
     localization.setLanguage(language);
-    setLanguage(language);
+    this.setState({language});
     // localStorage.setItem('language', language);
 
     // localization.getLanguage();
@@ -66,10 +58,10 @@ export default function App() {
     // localization.formatString(localization.onlyForMembers, <a href="http://login.com">{localization.login}</a>)
     // localization.formatString(localization.iAmText, <b>{localization.bold}</b>)
 
-    setMomentLanguage(localization.getLanguage());
+    this.setMomentLanguage(localization.getLanguage());
   };
 
-  const setMomentLanguage = (language) => {
+  setMomentLanguage = (language) => {
     //See https://momentjs.com/docs/#/customization/
     moment.locale(language, {
       months : localization.date.months_long,
@@ -110,37 +102,52 @@ export default function App() {
     });
   };
 
-  // if (!language) {
-  //   setLanguageHandler('en');
-  // }
+  render() {
+    const {menuOpen, darkState, language} = this.state;
 
-  return(
-    <ContextProvider value={{classes, language}}>
-      <ThemeProvider theme={darkTheme}>
-        <Box component="div" className={classes.root}>
-          <CssBaseline />
+    const palletType = darkState ? "dark" : "light";
+    const mainPrimaryColor = darkState ? orange[500] : lightBlue[500];
+    const mainSecondaryColor = darkState ? deepOrange[900] : deepPurple[500];
+    const darkTheme = createMuiTheme({
+      palette: {
+        type: palletType,
+        primary: {
+          main: mainPrimaryColor
+        },
+        secondary: {
+          main: mainSecondaryColor
+        }
+      }
+    });
+    const { classes } = this.props;
 
-          <Bar
-            onMenuHandler={(mode) => menuHandler(mode)}
-            onThemeChangeHandler={() => handleThemeChange()}
-            onSetLanguage={(language) => setLanguageHandler(language)}
-            menuOpen={menuOpen}
-          />
+    return(
+      <ContextProvider value={{classes, language}}>
+        <ThemeProvider theme={darkTheme}>
+          <Box component="div" className={classes.root}>
+            <CssBaseline />
 
-          <Menu
-            onMenuHandler={(mode) => menuHandler(mode)}
-            menuOpen={menuOpen}
-          />
+            <Bar
+              onMenuHandler={(mode) => this.menuHandler(mode)}
+              onThemeChangeHandler={() => this.hemeChangeHandler()}
+              onSetLanguage={(language) => this.setLanguageHandler(language)}
+              menuOpen={menuOpen}
+            />
 
-          <Dashboard/>
-        </Box>
+            <Menu
+              onMenuHandler={(mode) => this.menuHandler(mode)}
+              menuOpen={menuOpen}
+            />
 
-        {/*<Localize onSetLanguage={(language) => setLanguageHandler(language)} />*/}
-        {/*<div>{localization.language}</div>*/}
-      </ThemeProvider>
-    </ContextProvider>
-  );
+            <Dashboard />
+          </Box>
+        </ThemeProvider>
+      </ContextProvider>
+    );
+  }
 }
+
+export default withStyles(useStyles)(App);
 
 // import UserStore from './database/stores/UserStore';
 // const readAll = () => {

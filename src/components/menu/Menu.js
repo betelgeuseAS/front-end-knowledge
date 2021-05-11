@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './Menu.sass';
 import IconButton from "@material-ui/core/IconButton";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
@@ -23,8 +23,11 @@ import AssignmentIcon from "@material-ui/icons/Assignment";
 import ListAltIcon from '@material-ui/icons/ListAlt';
 import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 import ReplyIcon from '@material-ui/icons/Reply';
+import Context from "../utils/context/Context";
 
-export default function Menu({onMenuHandler, menuOpen, classes}) {
+export default function Menu({onMenuHandler, menuOpen}) {
+  const classes = useContext(Context)['classes'];
+
   return (
     <>
       <Drawer
@@ -122,12 +125,10 @@ export default function Menu({onMenuHandler, menuOpen, classes}) {
 
 Localize.propTypes = {
   onHandleMenu: PropTypes.func.isRequired,
-  openMenu: PropTypes.bool,
-  classes: PropTypes.object
+  openMenu: PropTypes.bool
 };
 
 Localize.defaultProps = {
   onHandleMenu: () => {},
-  openMenu: true,
-  classes: {}
+  openMenu: true
 };

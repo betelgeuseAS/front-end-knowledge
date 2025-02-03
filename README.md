@@ -7,3 +7,7 @@ If you find these projects helpful or interesting, please consider starring the 
 ### JavaScript
 
 [001. How JavaScript References Work](./javascript/001.%20How%20JavaScript%20References%20Work.md)
+
+### CSS
+
+[Locally Scoped CSS Variables: What, How, and Why](./css/001.%20Locally%20Scoped%20CSS%20Variables.md)

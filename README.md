@@ -6,25 +6,28 @@ If you find these projects helpful or interesting, please consider starring the 
 
 ### Browser
 
-[001. Reflow, Repaint, Composite](./browser/001.%20Reflow,%20Repaint,%20Composite.md)  
-[002. Event Loop](./browser/002.%20Event%20Loop.md)  
-[003. Ways To Avoid Cross-Browser Compatibility Issues](./browser/003.%20Ways%20To%20Avoid%20Cross-Browser%20Compatibility%20Issues.md)  
+[001. How do browsers work?](./browser/001.md)  
+[002. Event Loop, Web APIs, (Micro/Macro) task Queue](./browser/002.md)  
+[003. How does Event Loop Work?](./browser/003.md)  
+[004. What is Critical Rendering Path?](./browser/004.md)  
+[005. Reflow, Repaint, Composite](./browser/005.md)  
+[006. Ways to Avoid Cross-Browser Compatibility Issues](./browser/006.md)  
 
 ### Architecture
 
-[001. SOLID](./architecture/001.%20SOLID.md)  
-[002. Programming Paradigms](./architecture/002.%20Programming%20Paradigms.md)  
-[003. Object-Oriented Programming (OOP)](./architecture/003.%20Object-Oriented%20Programming%20(OOP).md)  
-[004. Functional Programming](./architecture/004.%20Functional%20Programming.md)  
-[005. Anti-Patterns](./architecture/005.%20Anti-Patterns.md)  
+[001. SOLID Principles](./architecture/001.md)  
+[002. Programming Paradigms](./architecture/002.md)  
+[003. Object-Oriented Programming (OOP)](./architecture/003.md)  
+[004. Functional Programming](./architecture/004.md)  
+[005. Programming/JavaScript Anti-Patterns](./architecture/005.md)  
 
 ### JavaScript
 
-[001. How JavaScript References Work](./javascript/001.%20How%20JavaScript%20References%20Work.md)  
-[002. Promise Execution](./javascript/002.%20Promise%20Execution.md)   
-[003. Asynchronous Programming: Callbacks, Promises, and Async/Await](./javascript/003.%20Asynchronous%20Programming.%20Callbacks,%20Promises%20and%20Async-Await.md)   
-[004. Memory Management and Optimization Techniques](./javascript/004.%20Memory%20Management%20and%20Optimization%20Techniques.md)   
+[001. Asynchronous Programming: Callbacks, Promises, and Async/Await](./javascript/001.md)  
+[002. Memory Management and Optimization Techniques](./javascript/002.md)  
+[003. Promise Execution](./javascript/003.md)  
+[004. How do JavaScript References Work?](./javascript/004.md)  
 
 ### CSS
 
-[001. Locally Scoped CSS Variables: What, How, and Why](./css/001.%20Locally%20Scoped%20CSS%20Variables.md)  
+[001. Locally Scoped CSS Variables: What, How, and Why](./css/001.md)  
